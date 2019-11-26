@@ -88,10 +88,9 @@ T Queue<T>::pop() //
 
 	if (count == 0)
 		throw "Очередь пуста\n";
-	T del = queuePtr[start];
-	start = (start + 1) % size;
 	count--;
-	return del;
+	int tmp = (size - count + finish) % size;
+	return queuePtr[tmp];
 }
 
 #endif
